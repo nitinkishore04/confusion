@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
 
-
     function RenderDish({dish}) {
         if( dish != null) {
             return(
@@ -22,8 +21,6 @@ import { Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
             );
         }
     }
-
-
     function RenderComment({dish}) {
         if (dish != null) {
 
@@ -53,8 +50,6 @@ import { Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
             );
         }
     }
-
-
     function Dishdetail (props) {
         return (
             <div className="row">
@@ -67,8 +62,4 @@ import { Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
             </div>
         );
     }
-    
-
-
-
 export default Dishdetail;

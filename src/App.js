@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Main from './components/MainComponent';
-
-
 class App extends Component {
-
-
   render() {
     return (
       <div>
@@ -14,5 +10,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
