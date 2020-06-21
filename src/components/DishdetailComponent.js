@@ -25,8 +25,9 @@ import { LocalForm, Control, Errors } from 'react-redux-form';
 
         handleSubmit(values){
             this.toggleModal();
-            console.log("Your Feedback is"+JSON.stringify(values));
-            alert("Your Feedback is"+JSON.stringify(values))
+            // console.log("Your Feedback is"+JSON.stringify(values));
+            // alert("Your Feedback is"+JSON.stringify(values))
+            this.props.addComment(this.props.dishId, values.rating, values.yourname, values.feedback);
         }
         render(){
             return(
@@ -103,7 +104,7 @@ import { LocalForm, Control, Errors } from 'react-redux-form';
             );
         }
     }
-    function RenderComment({comments}) {
+    function RenderComment({comments, addComment, dishId}) {
         if (comments != null) {
                 const cmnt = comments.map((comment) => {
                     return (
@@ -122,7 +123,7 @@ import { LocalForm, Control, Errors } from 'react-redux-form';
                     <ul className="list-unstyled">
                         {cmnt}
                     </ul>
-                    <CommentForm/>
+                    <CommentForm dishId={dishId} addComment={addComment}/>
                 </div>
             );
         }
@@ -149,7 +150,9 @@ import { LocalForm, Control, Errors } from 'react-redux-form';
                         <RenderDish dish={props.dish}/>
                     </div>
                     <div className="col-12 col-md-5 m-1">
-                        <RenderComment comments={props.comments}/>
+                        <RenderComment comments={props.comments}
+                        addComment = {props.addComment} dishId = {props.dish.id}
+                        />
                     </div>
             </div>
             </div>
