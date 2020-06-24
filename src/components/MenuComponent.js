@@ -3,19 +3,22 @@ import { Card, CardImg,  CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem }
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform } from 'react-animation-components';
 
     function RenderMenuItem({dish, onClick}) {
         return (
-            <Card>
-                <Link to={`/menu/${dish.id}`}>
-                    <CardImg object src={baseUrl + dish.image} alt={dish.name}></CardImg>
-                    <CardImgOverlay body className="ml-5">
-                        <CardTitle>
-                            {dish.name}
-                        </CardTitle>
-                    </CardImgOverlay>
-                </Link>
-            </Card>
+            <FadeTransform in transformProps={{ exitTransform: 'scale(0.5) translateY(-50%)'}}>
+                <Card>
+                    <Link to={`/menu/${dish.id}`}>
+                        <CardImg object src={baseUrl + dish.image} alt={dish.name}></CardImg>
+                        <CardImgOverlay body className="ml-5">
+                            <CardTitle>
+                                {dish.name}
+                            </CardTitle>
+                        </CardImgOverlay>
+                    </Link>
+                </Card>
+            </FadeTransform>
         );
     }
     const Menu = (props) => {
