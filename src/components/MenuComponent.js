@@ -3,6 +3,7 @@ import { Card, CardImg,  CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem }
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+
 import { FadeTransform } from 'react-animation-components';
 
     function RenderMenuItem({dish, onClick}) {
@@ -27,7 +28,6 @@ import { FadeTransform } from 'react-animation-components';
                 <div key={dish.id} className="col-12 col-md-5 m-1">
                     <RenderMenuItem dish={dish} />
                 </div>
-
             );
         });
         if (props.dishes.isLoading) {
