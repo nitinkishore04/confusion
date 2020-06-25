@@ -175,9 +175,11 @@ import { FadeTransform, Fade, Stagger } from 'react-animation-components';
                             <RenderDish dish={props.dish}/>
                         </div>
                         <div className="col-12 col-md-5 m-1">
-                            <RenderComment comments={props.comments}
-                            postComment = {props.postComment} dishId = {props.dish.id}
-                            />
+                            <Stagger in>
+                                <RenderComment comments={props.comments}
+                                    postComment = {props.postComment} dishId = {props.dish.id}
+                                />
+                            </Stagger>
                         </div>
                 </div>
                 </div>
